@@ -1,0 +1,51 @@
+:root{--pink:#ffb6d0;--blush:#ffdbe8;--cream:#fff7ec;--rose:#b5476b;--lav:#d9c7ff;--navy:#0b1030;--ink:#6b3a4a}
+*{box-sizing:border-box}html,body{margin:0}
+body{font-family:'Caveat',cursive;font-size:1.3rem;color:var(--ink)}
+.app{min-height:100vh;background:linear-gradient(160deg,var(--blush),var(--cream) 50%,var(--lav));position:relative;overflow-x:hidden}
+.app.night{background:radial-gradient(circle at 50% 30%,#2a1f5c,var(--navy) 70%)}
+main{position:relative;z-index:2;min-height:100vh;display:flex;align-items:center;justify-content:center;padding:56px 14px 40px}
+h1,h2,h3{font-family:'Dancing Script',cursive;color:var(--rose);margin:.3em 0}h1{font-size:clamp(2rem,6vw,3rem)}
+.card{background:var(--cream);border:3px solid var(--pink);border-radius:32px;box-shadow:0 18px 50px #e86a9a40;padding:28px 24px;max-width:560px;width:100%;text-align:center;position:relative}
+.wide{max-width:860px;width:100%;text-align:center}
+.row{display:flex;justify-content:center;gap:10px;align-items:flex-end}
+.char{animation:bob 3s ease-in-out infinite;filter:drop-shadow(0 4px 4px #0002)}.dance{animation:dance .7s infinite alternate}
+@keyframes bob{50%{transform:translateY(-8px)}}@keyframes dance{from{transform:rotate(-10deg)}to{transform:rotate(10deg) translateY(-6px)}}
+.btn{font:inherit;font-weight:700;font-size:1.3rem;color:#fff;background:linear-gradient(135deg,#ff7eb0,#e0558a);border:0;border-radius:999px;padding:10px 26px;margin:14px 6px 0;cursor:pointer;box-shadow:0 6px 16px #e0558a66;transition:transform .2s}
+.btn:hover{transform:scale(1.07)}.btn.sm{padding:6px 18px;font-size:1.1rem}
+.back,.music{position:fixed;z-index:10;top:12px;font:inherit;border:0;border-radius:999px;background:#fffc;color:var(--rose);padding:6px 14px;cursor:pointer;display:flex;gap:4px;align-items:center;box-shadow:0 3px 10px #0002}
+.back{left:12px}.music{right:12px;padding:9px}
+.floaters{position:fixed;inset:0;pointer-events:none;z-index:1;overflow:hidden}
+.floaters span{position:absolute;bottom:-40px;opacity:.7;animation:rise linear infinite}
+@keyframes rise{to{transform:translateY(-115vh) rotate(40deg)}}
+.envwrap{position:relative;width:260px;height:200px;margin:50px auto 10px;cursor:pointer}
+.env{position:absolute;inset:0;perspective:600px}
+.env:before{content:"";position:absolute;inset:0;background:#ff8fb8;border-radius:10px}
+.pocket{position:absolute;inset:0;background:linear-gradient(135deg,#ff9fc4,#ff7eb0);border-radius:10px;z-index:2;clip-path:polygon(0 0,50% 55%,100% 0,100% 100%,0 100%);box-shadow:0 10px 24px #e0558a55}
+.flap{position:absolute;top:0;left:0;right:0;height:60%;background:#ff6fa5;clip-path:polygon(0 0,100% 0,50% 100%);z-index:3}
+.letterpop{position:absolute;left:12px;right:12px;top:14px;height:150px;background:#fff;border-radius:6px;z-index:1;padding-top:20px;font-size:1.4rem;box-shadow:0 2px 8px #0002}
+.seal{position:absolute;left:50%;top:48%;transform:translate(-50%,-50%);z-index:4;font-size:1.8rem;background:#d83a78;border-radius:50%;width:44px;height:44px;display:grid;place-items:center;pointer-events:none}
+.peek{position:absolute;right:-38px;top:-52px;z-index:0}.kit{position:absolute;left:-52px;bottom:-30px;z-index:5}
+.hint{opacity:.8}
+.paper{background:#fff;border:6px double var(--pink);border-radius:14px;max-width:640px;width:100%;padding:60px 28px 30px;text-align:center;position:relative;box-shadow:0 18px 50px #e86a9a40}
+.corner{position:absolute;top:-24px}.tl{left:-8px}.tr{right:-8px}
+.paper .body{text-align:left;line-height:1.35;font-size:1.45rem}.paper h2{font-size:2.2rem}
+.with{margin-top:20px}.sig{margin-top:-4px}
+.signame{display:inline-block;font-family:'Mrs Saint Delafield',cursive;font-size:clamp(3.6rem,13vw,5.4rem);color:#9c2f58;transform:rotate(-5deg);line-height:1;padding:0 12px;text-shadow:.6px .6px 0 #9c2f58}
+.flourish{display:block;width:min(260px,70%);margin:-6px auto 0}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:14px;margin:22px 0}
+.tile{font:inherit;font-size:1.3rem;font-weight:700;color:var(--rose);background:linear-gradient(145deg,#fff,var(--blush));border:2px solid var(--pink);border-radius:22px;padding:26px 10px;cursor:pointer;display:flex;flex-direction:column;align-items:center;gap:8px;box-shadow:0 6px 16px #e86a9a30}
+.modal{position:fixed;inset:0;background:#3a102680;z-index:20;display:grid;place-items:center;padding:16px}
+.pop{background:var(--cream);border:3px solid var(--pink);border-radius:28px;padding:22px;max-width:380px;text-align:center}
+.meme{background:#fff;border:2px dashed var(--pink);padding:14px 10px;border-radius:12px;cursor:pointer;min-height:170px;box-shadow:0 5px 12px #0002}
+.meme p{margin:8px 0 0;font-size:1.25rem}.tap{opacity:.6}
+.toast{position:fixed;left:50%;bottom:20px;transform:translateX(-50%);background:#fff;border:3px solid var(--pink);border-radius:20px;padding:14px 38px 14px 18px;z-index:30;display:flex;gap:10px;align-items:center;max-width:92vw;box-shadow:0 8px 30px #0003;text-align:left}
+.toast p{margin:0}.x{position:absolute;top:4px;right:8px;border:0;background:none;font-size:1.2rem;cursor:pointer;color:var(--rose)}
+.moonwrap{position:relative;width:100%;max-width:640px;text-align:center}.light{color:#f3e8ff}
+.star{position:fixed;width:3px;height:3px;background:#fff;border-radius:50%;animation:tw 3s infinite;z-index:0}@keyframes tw{50%{opacity:.15}}
+.moonbox{position:relative;width:min(340px,80vw);aspect-ratio:1;margin:30px auto}
+.moon{position:absolute;inset:14%;border-radius:50%;background:radial-gradient(circle at 35% 35%,#fffef0,#e8e4d0 55%,#b9b49c);box-shadow:0 0 60px 20px #e9d9ff88,0 0 140px 50px #ff9fd355}
+.marker{position:absolute;transform:translate(-50%,-50%);background:none;border:0;color:#ffe9a8;font-size:1.9rem;cursor:pointer;text-shadow:0 0 12px #ffd54a,0 0 24px #ff9fd3;padding:8px}
+.cm{position:absolute;bottom:-30px}.cm.l{left:-30px}.cm.r{right:-30px}.msg{min-height:60px}.msg h3{color:#ffd1ea;font-size:2rem}
+.crown{font-size:3.6rem;filter:drop-shadow(0 0 16px gold)}.fine{font-family:'Dancing Script';font-size:1.5rem;color:var(--rose)}
+.burst{position:absolute;left:50%;top:40%;pointer-events:none}.burst span{position:absolute;font-size:1.8rem}
+@media(max-width:480px){body{font-size:1.2rem}.kit{left:-30px}.peek{right:-20px}}
